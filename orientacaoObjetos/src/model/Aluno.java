@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aluno {
 
 	private String nome;
@@ -12,7 +15,7 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	private Disciplina disciplina = new Disciplina();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 
 	/*------------------Construtores----------------------------*/
@@ -111,23 +114,21 @@ public class Aluno {
 		this.serieMatriculado = serieMatriculado;
 	}
 	
-	public Disciplina getDisciplina() {
-		return disciplina;
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
-	
 
-	
 	/*--------------toString facilita a impressão no terminal no console--------------*/
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplina=" + disciplina + "]";
+				+ serieMatriculado + "]";
 	}
 	
 	
@@ -160,7 +161,14 @@ public class Aluno {
 
 	/*-------------------Métodos---------------------*/
 	public double getMediaNota() {
-		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+		
+		double somaNotas = 0.0;
+		
+		for(Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		
+		return somaNotas / disciplinas.size();
 	}
 	
 	public boolean getAlunoAprovado() {
