@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import constantes.StatusAluno;
+
 public class Aluno {
 
 	private String nome;
@@ -173,10 +175,22 @@ public class Aluno {
 	
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if(media >= 7) {
+		if(media >= 5) {
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNota();
+		if(media >= 5) {
+			if(media >= 7) {
+				return StatusAluno.APROVADO;
+			}
+			return StatusAluno.RECUPERACAO;
+		} else {
+			return StatusAluno.REPROVADO;
 		}
 	}
 }
