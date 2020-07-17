@@ -18,9 +18,9 @@ public class Main {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		PermitirAcesso secretario = new Secretario();
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
-		if(secretario.autenticar(login, senha)) {
+		if(permitirAcesso.autenticar()) {
 			List<Aluno> alunos = new ArrayList<Aluno>();
 			
 			/* É uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
