@@ -131,4 +131,14 @@ public class Aluno extends Pessoa {
 			return StatusAluno.REPROVADO;
 		}
 	}
+	
+	@Override /*Indentifica método e sobreescreve o mesmo*/
+	public boolean pessoaMaiorIdade() {
+		
+		return idade >= 16;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "O aluno é maior de idade" : "O aluno não é maior de idade";
+	}
 }
