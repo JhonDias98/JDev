@@ -19,7 +19,7 @@ public class Main {
 		if(login.equalsIgnoreCase("admim") && senha.equalsIgnoreCase("admim")) {
 			List<Aluno> alunos = new ArrayList<Aluno>();
 			
-			/*É uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
+			/* É uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 			
 			for(int qtd = 0; qtd < 5; qtd++) {
