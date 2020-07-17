@@ -19,18 +19,18 @@ public class Main {
 		if(login.equalsIgnoreCase("admim") && senha.equalsIgnoreCase("admim")) {
 			List<Aluno> alunos = new ArrayList<Aluno>();
 			
-			/*ï¿½ uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
+			/*É uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 			
 			for(int qtd = 0; qtd < 5; qtd++) {
 				
 				/*Usando JOptionPane para deixar dinamico*/
-				String nome = JOptionPane.showInputDialog("Qual o nome do " + qtd+1+"ï¿½ aluno? ");
+				String nome = JOptionPane.showInputDialog("Qual o nome do " + qtd+1+"é aluno? ");
 				String idade = JOptionPane.showInputDialog("Qual a sua idade");	
 				String dataNascimento = JOptionPane.showInputDialog("Ano de nascimento");
 				String registroGeral = JOptionPane.showInputDialog("Informa seu RG");
 				String numeroCpf = JOptionPane.showInputDialog("Informe seu CPF");
-				String nomeMae = JOptionPane.showInputDialog("Nome da Mï¿½e");
+				String nomeMae = JOptionPane.showInputDialog("Nome da Mée");
 				String nomePai = JOptionPane.showInputDialog("Nome do Pai");
 				String dataMatricula = JOptionPane.showInputDialog("Informe a data de sua matricula");
 				String nomeEscola = JOptionPane.showInputDialog("Nome da escola");
@@ -53,8 +53,8 @@ public class Main {
 			
 				/*Adicionando disciplinas na lista*/
 				for(int i = 1; i <= 1 ; i++) {
-					String nomeDisciplina = JOptionPane.showInputDialog("Informe o nome da "+ i +"ï¿½ disciplina");
-					String nota = JOptionPane.showInputDialog("Informe a "+ i +"ï¿½ nota");
+					String nomeDisciplina = JOptionPane.showInputDialog("Informe o nome da "+ i +"é disciplina");
+					String nota = JOptionPane.showInputDialog("Informe a "+ i +"é nota");
 				
 					Disciplina disciplina = new Disciplina();
 					disciplina.setDisciplina(nomeDisciplina);
@@ -98,38 +98,38 @@ public class Main {
 			System.out.println("--------------- Lista dos alunos aprovados ---------------");
 			for(Aluno aluno : maps.get(StatusAluno.APROVADO)) {
 				System.out.println("Aluno: " + aluno.getNome());
-				System.out.println("Resultado: " + aluno.getAlunoAprovado2() + ", com a mï¿½dia de: " + aluno.getMediaNota());
-				/*Quando o retorno ï¿½ bollean, pode usar a saï¿½da abaixo*/
+				System.out.println("Resultado: " + aluno.getAlunoAprovado2() + ", com a média de: " + aluno.getMediaNota());
+				/*Quando o retorno é bollean, pode usar a saéda abaixo*/
 				/*System.out.println("Resultado final: " + (aluno.getAlunoAprovado() ? "Aprovado" : "Reprovado"));*/
 				for(Disciplina disciplina : aluno.getDisciplinas()) {
-					System.out.println("Matï¿½ria: " + disciplina.getDisciplina() + ", nota: " + disciplina.getNota());
+					System.out.println("Matéria: " + disciplina.getDisciplina() + ", nota: " + disciplina.getNota());
 				}
 			}
 			
-			System.out.println("--------------- Lista dos alunos em recuperaï¿½ï¿½o ---------------");
+			System.out.println("--------------- Lista dos alunos em recuperação ---------------");
 			for(Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
 				System.out.println("Aluno: " + aluno.getNome());
-				System.out.println("Resultado: " + aluno.getAlunoAprovado2() + ", com a mï¿½dia de: " + aluno.getMediaNota());
+				System.out.println("Resultado: " + aluno.getAlunoAprovado2() + ", com a média de: " + aluno.getMediaNota());
 				for(Disciplina disciplina : aluno.getDisciplinas()) {
-					System.out.println("Matï¿½ria: " + disciplina.getDisciplina() + ", nota: " + disciplina.getNota());
+					System.out.println("Matéria: " + disciplina.getDisciplina() + ", nota: " + disciplina.getNota());
 				}
 			}
 			
 			System.out.println("--------------- Lista dos alunos reprovados ---------------");
 			for(Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
 				System.out.println("Aluno: " + aluno.getNome());
-				System.out.println("Resultado: " + aluno.getAlunoAprovado2() + ", com a mï¿½dia de: " + aluno.getMediaNota());
+				System.out.println("Resultado: " + aluno.getAlunoAprovado2() + ", com a média de: " + aluno.getMediaNota());
 				for(Disciplina disciplina : aluno.getDisciplinas()) {
-					System.out.println("Matï¿½ria: " + disciplina.getDisciplina() + ", nota: " + disciplina.getNota());
+					System.out.println("Matéria: " + disciplina.getDisciplina() + ", nota: " + disciplina.getNota());
 				}
 			}
 			
 			
-			/*Percorrendo a lista de alunos e trocando as informaï¿½ï¿½es de um determinado aluno*/
+			/*Percorrendo a lista de alunos e trocando as informaéées de um determinado aluno*/
 			/*for(int pos = 0; pos < alunos.size(); pos++) {
 				Aluno aluno = alunos.get(pos);
 				
-				/*Trocando as informaï¿½ï¿½es de um determinado aluno*/
+				/*Trocando as informações de um determinado aluno*/
 				/*if(aluno.getNome().equalsIgnoreCase("Jonathan")) {
 					
 					Aluno trocar = new Aluno();
@@ -157,9 +157,9 @@ public class Main {
 			aluno3.setNumeroCpf("123");
 			
 			if(aluno2.equals(aluno3)) {
-				System.out.println("CPF dos alunos sï¿½o iguais");
+				System.out.println("CPF dos alunos são iguais");
 			} else {
-				System.out.println("CPF dos alunos nï¿½o sï¿½o iguais");
+				System.out.println("CPF dos alunos não são iguais");
 			}
 			*/
 		}
