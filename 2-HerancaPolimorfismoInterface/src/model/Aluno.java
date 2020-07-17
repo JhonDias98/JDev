@@ -141,4 +141,9 @@ public class Aluno extends Pessoa {
 	public String msgMaiorIdade() {
 		return this.pessoaMaiorIdade() ? "O aluno é maior de idade" : "O aluno não é maior de idade";
 	}
+
+	@Override
+	public double salario() {
+		return 800;
+	}
 }

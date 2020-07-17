@@ -22,12 +22,19 @@ public class TestandoClassesFilhas {
 		secretario.setNumeroCpf("12345678912");
 		secretario.setIdade(35);
 		
+		System.out.println("--------------ALUNO----------------");
 		System.out.println(aluno);
-		System.out.println(diretor);
-		System.out.println(secretario);
-		
 		System.out.println(aluno.pessoaMaiorIdade() + " - " + aluno.msgMaiorIdade());
+		System.out.println("Salário: " + aluno.salario());
+		
+		System.out.println("--------------DIRETOR----------------");
+		System.out.println(diretor);
 		System.out.println(diretor.pessoaMaiorIdade());
+		System.out.println("Salário: " + diretor.salario());
+		
+		System.out.println("--------------SECRETARIO----------------");
+		System.out.println(secretario);
 		System.out.println(secretario.pessoaMaiorIdade());
+		System.out.println("Salário: " + secretario.salario());
 	}
 }
