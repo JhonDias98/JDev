@@ -1,8 +1,9 @@
 package model;
 
-/*Classe pai ou super classe
- *Utiliza protected para deixar os atributo protegidos, usando apenas nas classes filhas*/
-public class Pessoa {
+/*Classe pai ou super classe*/
+/*ABSTRACT impede que a classe seja instanciadas*/
+/*PROTECTED deixa os atributo protegidos, usando apenas nas classes filhas*/
+public abstract class Pessoa {
 	
 	protected String nome;
 	protected int idade;
