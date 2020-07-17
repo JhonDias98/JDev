@@ -25,12 +25,12 @@ public class Main {
 			for(int qtd = 0; qtd < 5; qtd++) {
 				
 				/*Usando JOptionPane para deixar dinamico*/
-				String nome = JOptionPane.showInputDialog("Qual o nome do " + qtd+1+"é aluno? ");
-				String idade = JOptionPane.showInputDialog("Qual a sua idade");	
+				String nome = JOptionPane.showInputDialog("Qual o nome do " + (qtd+1) + "º aluno");
+				String idade = JOptionPane.showInputDialog("Idade");	
 				String dataNascimento = JOptionPane.showInputDialog("Ano de nascimento");
 				String registroGeral = JOptionPane.showInputDialog("Informa seu RG");
 				String numeroCpf = JOptionPane.showInputDialog("Informe seu CPF");
-				String nomeMae = JOptionPane.showInputDialog("Nome da Mée");
+				String nomeMae = JOptionPane.showInputDialog("Nome da Mãe");
 				String nomePai = JOptionPane.showInputDialog("Nome do Pai");
 				String dataMatricula = JOptionPane.showInputDialog("Informe a data de sua matricula");
 				String nomeEscola = JOptionPane.showInputDialog("Nome da escola");
@@ -53,7 +53,7 @@ public class Main {
 			
 				/*Adicionando disciplinas na lista*/
 				for(int i = 1; i <= 1 ; i++) {
-					String nomeDisciplina = JOptionPane.showInputDialog("Informe o nome da "+ i +"é disciplina");
+					String nomeDisciplina = JOptionPane.showInputDialog("Informe o nome da "+ i +"° disciplina");
 					String nota = JOptionPane.showInputDialog("Informe a "+ i +"é nota");
 				
 					Disciplina disciplina = new Disciplina();
