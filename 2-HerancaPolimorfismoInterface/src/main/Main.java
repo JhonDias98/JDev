@@ -58,8 +58,8 @@ public class Main {
 			
 				/*Adicionando disciplinas na lista*/
 				for(int i = 1; i <= 1 ; i++) {
-					String nomeDisciplina = JOptionPane.showInputDialog("Informe o nome da "+ i +"é disciplina");
-					String nota = JOptionPane.showInputDialog("Informe a "+ i +"é nota");
+					String nomeDisciplina = JOptionPane.showInputDialog("Informe o nome da "+ i +"º disciplina");
+					String nota = JOptionPane.showInputDialog("Informe a "+ i +"º nota");
 				
 					Disciplina disciplina = new Disciplina();
 					disciplina.setDisciplina(nomeDisciplina);
