@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import constantes.StatusAluno;
+import interfaces.PermitirAcesso;
 import model.Aluno;
 import model.Disciplina;
 import model.Secretario;
@@ -17,11 +18,9 @@ public class Main {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
+		PermitirAcesso secretario = new Secretario();
 		
-		if(secretario.autenticar()) {
+		if(secretario.autenticar(login, senha)) {
 			List<Aluno> alunos = new ArrayList<Aluno>();
 			
 			/* É uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
@@ -30,7 +29,7 @@ public class Main {
 			for(int qtd = 0; qtd < 5; qtd++) {
 				
 				/*Usando JOptionPane para deixar dinamico*/
-				String nome = JOptionPane.showInputDialog("Qual o nome do " + (qtd+1) + " aluno ");
+				String nome = JOptionPane.showInputDialog("Qual o nome do " + (qtd+1) + "º aluno ");
 				String idade = JOptionPane.showInputDialog("Idade");	
 				String dataNascimento = JOptionPane.showInputDialog("Ano de nascimento");
 				String registroGeral = JOptionPane.showInputDialog("Informa seu RG");
