@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import constantes.StatusAluno;
 import model.Aluno;
 import model.Disciplina;
+import model.Secretario;
 
 public class Main {
 	public static void main(String[] args) {
@@ -16,7 +17,11 @@ public class Main {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		if(login.equalsIgnoreCase("admim") && senha.equalsIgnoreCase("admim")) {
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		if(secretario.autenticar()) {
 			List<Aluno> alunos = new ArrayList<Aluno>();
 			
 			/* É uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
@@ -25,12 +30,12 @@ public class Main {
 			for(int qtd = 0; qtd < 5; qtd++) {
 				
 				/*Usando JOptionPane para deixar dinamico*/
-				String nome = JOptionPane.showInputDialog("Qual o nome do " + qtd+1+"é aluno? ");
-				String idade = JOptionPane.showInputDialog("Qual a sua idade");	
+				String nome = JOptionPane.showInputDialog("Qual o nome do " + (qtd+1) + " aluno ");
+				String idade = JOptionPane.showInputDialog("Idade");	
 				String dataNascimento = JOptionPane.showInputDialog("Ano de nascimento");
 				String registroGeral = JOptionPane.showInputDialog("Informa seu RG");
 				String numeroCpf = JOptionPane.showInputDialog("Informe seu CPF");
-				String nomeMae = JOptionPane.showInputDialog("Nome da Mée");
+				String nomeMae = JOptionPane.showInputDialog("Nome da Mãe");
 				String nomePai = JOptionPane.showInputDialog("Nome do Pai");
 				String dataMatricula = JOptionPane.showInputDialog("Informe a data de sua matricula");
 				String nomeEscola = JOptionPane.showInputDialog("Nome da escola");
@@ -162,6 +167,8 @@ public class Main {
 				System.out.println("CPF dos alunos não são iguais");
 			}
 			*/
+		} else {
+			System.out.println("Acesso não permitido");
 		}
 	}
 }
