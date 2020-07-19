@@ -10,6 +10,7 @@ import classesAuxiliares.FuncaoAutenticacao;
 import constantes.StatusAluno;
 import interfaces.PermitirAcesso;
 import model.Aluno;
+import model.Diretor;
 import model.Disciplina;
 import model.Secretario;
 
@@ -20,8 +21,11 @@ public class Main {
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
 		PermitirAcesso permitirAcessoSecretario = new Secretario(login, senha);
-		
-		if(new FuncaoAutenticacao(permitirAcessoSecretario).autenticar(login, senha)) {
+		PermitirAcesso permitirAcessoDiretor = new Diretor(login,senha);
+		boolean permitirAcesso = new FuncaoAutenticacao(permitirAcessoSecretario).autenticar(login, senha) ||
+				new FuncaoAutenticacao(permitirAcessoDiretor).autenticar(login, senha);
+	
+		if(permitirAcesso) {
 			List<Aluno> alunos = new ArrayList<Aluno>();
 			
 			/* É uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
