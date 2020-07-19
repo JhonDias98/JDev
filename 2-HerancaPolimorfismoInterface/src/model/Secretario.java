@@ -21,22 +21,42 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	public String getRegistro() {
 		return registro;
 	}
+	
 	public void setRegistro(String registro) {
 		this.registro = registro;
 	}
+	
 	public String getNivelCargo() {
 		return nivelCargo;
 	}
+	
 	public void setNivelCargo(String nivelCargo) {
 		this.nivelCargo = nivelCargo;
 	}
 	public String getExperiencia() {
 		return experiencia;
 	}
+	
 	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
 	}
 	
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	@Override
 	public String toString() {
 		return "Secretario [registro=" + registro + ", nivelCargo=" + nivelCargo + ", experiencia=" + experiencia
@@ -55,12 +75,6 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	public boolean autenticar(String login, String senha) {
 		this.login = login;
 		this.senha = senha;
-		return autenticar();
-	}
-	@Override
-	public boolean autenticar() {
 		return login.equals("admin") && senha.equals("admin");
 	}
-	
-	
 }

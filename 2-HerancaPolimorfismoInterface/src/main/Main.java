@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import classesAuxiliares.FuncaoAutenticacao;
 import constantes.StatusAluno;
 import interfaces.PermitirAcesso;
 import model.Aluno;
@@ -18,9 +19,9 @@ public class Main {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		PermitirAcesso permitirAcessoSecretario = new Secretario(login, senha);
 		
-		if(permitirAcesso.autenticar()) {
+		if(new FuncaoAutenticacao(permitirAcessoSecretario).autenticar(login, senha)) {
 			List<Aluno> alunos = new ArrayList<Aluno>();
 			
 			/* É uma lista que dentro dela temos uma chave que indentifica uma sequencia de valores*/
