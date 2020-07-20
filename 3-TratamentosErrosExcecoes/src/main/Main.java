@@ -175,7 +175,8 @@ public class Main {
 			} else {
 				JOptionPane.showMessageDialog(null, "Acesso não permitido");
 			}
-		} catch (Exception e) {
+			/*Exceções de conversão de número*/
+		} catch (NumberFormatException e) {
 			
 			StringBuilder saida = new StringBuilder();
 			/*Imprime o erro no console*/
@@ -192,7 +193,45 @@ public class Main {
 				saida.append("Classe de exceção: " + e.getClass().getName());
 			}
 			
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas, erros: " + saida.toString());
+			JOptionPane.showMessageDialog(null, "Erro de conversão de número: " + saida.toString());
+			
+			/*Excecões de nulos*/
+		} catch (NullPointerException e ) {
+			StringBuilder saida = new StringBuilder();
+			/*Imprime o erro no console*/
+			e.printStackTrace(); 
+			
+			/*Mensagem do erro ou causa*/
+			System.out.println("Mensagem: " + e.getMessage());
+			
+			/*Customizando a mensagem de erro*/
+			for(int pos = 0; pos < e.getStackTrace().length; pos++) {
+				saida.append("Classe de erro: " + e.getStackTrace()[pos].getClassName());
+				saida.append("Método de erro: " + e.getStackTrace()[pos].getMethodName());
+				saida.append("Linha de erro: " + e.getStackTrace()[pos].getLineNumber());
+				saida.append("Classe de exceção: " + e.getClass().getName());
+			}
+			JOptionPane.showMessageDialog(null, "Foi encontrado um null pointer exception: " + saida.toString());
+			
+			/*Outros tipos de exceções*/
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			StringBuilder saida = new StringBuilder();
+			/*Imprime o erro no console*/
+			e.printStackTrace(); 
+			
+			/*Mensagem do erro ou causa*/
+			System.out.println("Mensagem: " + e.getMessage());
+			
+			/*Customizando a mensagem de erro*/
+			for(int pos = 0; pos < e.getStackTrace().length; pos++) {
+				saida.append("Classe de erro: " + e.getStackTrace()[pos].getClassName());
+				saida.append("Método de erro: " + e.getStackTrace()[pos].getMethodName());
+				saida.append("Linha de erro: " + e.getStackTrace()[pos].getLineNumber());
+				saida.append("Classe de exceção: " + e.getClass().getName());
+			}
+			JOptionPane.showMessageDialog(null, "Erro inesperado: " + saida.toString());
 		}
 	}
 }
