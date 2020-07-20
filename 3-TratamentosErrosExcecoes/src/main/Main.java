@@ -176,6 +176,8 @@ public class Main {
 				JOptionPane.showMessageDialog(null, "Acesso não permitido");
 			}
 		} catch (Exception e) {
+			
+			StringBuilder saida = new StringBuilder();
 			/*Imprime o erro no console*/
 			e.printStackTrace(); 
 			
@@ -184,12 +186,13 @@ public class Main {
 			
 			/*Customizando a mensagem de erro*/
 			for(int pos = 0; pos < e.getStackTrace().length; pos++) {
-				System.out.println("Classe de erro: " + e.getStackTrace()[pos].getClassName());
-				System.out.println("Método de erro: " + e.getStackTrace()[pos].getMethodName());
-				System.out.println("Linha de erro: " + e.getStackTrace()[pos].getLineNumber());
+				saida.append("Classe de erro: " + e.getStackTrace()[pos].getClassName());
+				saida.append("Método de erro: " + e.getStackTrace()[pos].getMethodName());
+				saida.append("Linha de erro: " + e.getStackTrace()[pos].getLineNumber());
+				saida.append("Classe de exceção: " + e.getClass().getName());
 			}
 			
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas");
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas, erros: " + saida.toString());
 		}
 	}
 }
