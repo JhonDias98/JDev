@@ -182,6 +182,13 @@ public class Main {
 			/*Mensagem do erro ou causa*/
 			System.out.println("Mensagem: " + e.getMessage());
 			
+			/*Customizando a mensagem de erro*/
+			for(int pos = 0; pos < e.getStackTrace().length; pos++) {
+				System.out.println("Classe de erro: " + e.getStackTrace()[pos].getClassName());
+				System.out.println("Método de erro: " + e.getStackTrace()[pos].getMethodName());
+				System.out.println("Linha de erro: " + e.getStackTrace()[pos].getLineNumber());
+			}
+			
 			JOptionPane.showMessageDialog(null, "Erro ao processar notas");
 		}
 	}
