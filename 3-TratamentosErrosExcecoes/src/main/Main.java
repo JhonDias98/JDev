@@ -232,6 +232,10 @@ public class Main {
 				saida.append("Classe de exceção: " + e.getClass().getName());
 			}
 			JOptionPane.showMessageDialog(null, "Erro inesperado: " + saida.toString());
+			
+			/*Sempre é executado, tendo erro ou não*/
+		} finally {
+			System.out.println("Finally executado");
 		}
 	}
 }
